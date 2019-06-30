@@ -1,0 +1,15 @@
+<apex:component controller="AutoCompleteControllerr">
+  <apex:includeScript value="{!URLFOR($Resource.AutoComplete, 'JQueryUI/js/jquery-1.7.1.min.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.AutoComplete, 'JQueryUI/js/jquery-ui-1.8.17.custom.min.js')}" />
+  <apex:stylesheet value="{!URLFOR($Resource.AutoComplete,'JQueryUI/css/ui-lightness/jquery-ui-1.8.17.custom.css')}"/>
+ 
+  <apex:attribute name="autocomplete_textbox" description="The ID for the Autocomplete List Textbox." type="String" required="true"/>
+  <apex:attribute name="productfamily" description="The ID for the Autocomplete List Textbox." type="String" />
+   <script type="text/javascript">
+       var j$ = jQuery.noConflict();
+       j$(document).ready(function(){
+            var sObjects;
+            var queryTerm; 
+       });
+   </script>
+</apex:component>

@@ -1,0 +1,14 @@
+<apex:page standardController="account">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageBlockSection >
+                <apex:repeat value="{!$objecttype.account.fieldsets.account_fields}" var="set">
+                    <apex:inputField value="{!account[set]}"/><br/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+             <apex:pageblockButtons >
+                    <apex:commandButton action="{!save}" value="Save"/>
+             </apex:pageblockButtons>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

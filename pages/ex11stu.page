@@ -1,0 +1,15 @@
+<apex:page controller="studentcls">
+    <apex:form >
+        <apex:pageBlock title="Student Information">
+            <apex:pageblockSection >            
+                <apex:inputField value="{!stu.Name__c}"/>
+                <apex:inputfield value="{!stu.status__c}"/>
+            </apex:pageblockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save1}" value="Save"/>
+                <apex:commandButton action="{!savenew1}" value="Save&New"/>
+                <apex:commandButton action="{!cancel1}" value="Cancel"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,64 @@
+<apex:page sidebar="true" Standardcontroller="Account" Extensions="ContactHierarchy" showheader="true">
+<!-- Include the Jquery Script files -->
+    <link rel="stylesheet" href="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.treeview.css')}"/>
+    <script src="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.js')}" type="text/javascript"></script>
+    <script src="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.cookie.js')}" type="text/javascript"></script>
+    <script src="{!URLFOR($Resource.Jtreeview,'Jquerytreeview/jquery.treeview.js')}" type="text/javascript"></script>
+<!-- End of Javascript files -->
+<script type="text/javascript">
+        $(function() {
+            $("#tree").treeview({
+                collapsed: true,
+                animated: "fast",
+                control:"#sidetreecontrol"               
+            });
+        })
+</script>
+ 
+  
+  
+ 
+<!-- Tree -->
+<apex:pageBlock >
+<div class="treeheader" style="height:0px;"> </div>
+<div id="sidetreecontrol"><a href="?#"><font style="color:grey;">Collapse All</font></a> | <a href="?#"><font style="color:grey;">Expand All</font></a></div>
+<ul id='tree'>
+    <apex:repeat value="{!mainnodes}" var="parent1">
+        <li><strong><apex:outputLink style="color:black;" value="/{!parent1.gparent.id}">{!parent1.gparent.firstName}</apex:outputLink></strong>
+             <ul>
+                 <apex:repeat value="{!parent1.parent}" var="child1">
+                    <li><span class="formattextcon">
+                    <apex:outputLink style="color:black;" value="/{!child1.id}">{!child1.FirstName}</apex:outputLink>
+</span>
+                <ul>
+                 <apex:repeat value="{!parent1.child[child1.id]}" var="child2">
+                    <li><span class="formattextcon">
+                    <apex:outputLink style="color:black;" value="/{!child2.id}">{!child2.FirstName}</apex:outputLink>
+                    </span>      
+                        <ul>
+                           <apex:repeat value="{!parent1.allchild[child2.id]}" var="child3">
+                             <li><span class="formattextcon">
+                             <apex:outputLink style="color:black;" value="/{!child3.id}">{!child3.FirstName}</apex:outputLink>
+</span>
+                                <ul>
+                                    <apex:repeat value="{!parent1.allchild[child3.id]}" var="child4">
+                                   <li><span class="formattextcon">
+                                     <apex:outputLink style="color:black;" value="/{!child4.id}">{!child4.FirstName}</apex:outputLink>                                   
+</span>
+                                   </li>    
+                                   </apex:repeat>
+                               </ul>
+                             </li>
+                        </apex:repeat>
+                       </ul>
+                  </li>                 
+                        </apex:repeat>
+                </ul> </li>             
+                        </apex:repeat>                     
+             </ul>                             
+        </li>
+    </apex:repeat>
+</ul>
+</apex:pageBlock>
+<!-- End of Tree -->       
+</apex:page>

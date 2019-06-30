@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamicChoiceSets>
+        <name>opportunity</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>StageName</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>New Customer Flows {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New Customer Flows</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>account</name>
+        <label>account</label>
+        <locationX>65</locationX>
+        <locationY>196</locationY>
+        <connector>
+            <targetReference>contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>first_name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordCreates>
+    <recordCreates>
+        <name>contact</name>
+        <label>contact</label>
+        <locationX>237</locationX>
+        <locationY>190</locationY>
+        <connector>
+            <targetReference>opportuni</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>first_name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>last_name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordCreates>
+    <recordCreates>
+        <name>opportuni</name>
+        <label>opportuni</label>
+        <locationX>425</locationX>
+        <locationY>193</locationY>
+        <inputAssignments>
+            <field>Amount</field>
+            <value>
+                <elementReference>opportunity_amount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <dateValue>2016-09-26</dateValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>{company_name}-{Last_Name}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Prospecting</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordCreates>
+    <screens>
+        <name>Customer_Flow</name>
+        <label>Customer Flow</label>
+        <locationX>151</locationX>
+        <locationY>66</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>account</targetReference>
+        </connector>
+        <fields>
+            <name>first_name</name>
+            <dataType>String</dataType>
+            <fieldText>first name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>last_name</name>
+            <dataType>String</dataType>
+            <fieldText>last name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>company_name</name>
+            <dataType>String</dataType>
+            <fieldText>company name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>opportunity_amount</name>
+            <dataType>Currency</dataType>
+            <fieldText>opportunity amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>opportunity_stage</name>
+            <choiceReferences>opportunity</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>opportunity stage</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Customer_Flow</startElementReference>
+    <status>Draft</status>
+</Flow>

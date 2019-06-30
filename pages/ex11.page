@@ -1,0 +1,7 @@
+<apex:page sidebar="false" standardController="Account">
+    <apex:pageBlock title="Account Information">
+        <apex:pageBlockTable value="{!account.contacts}" var="acc">
+        	<apex:column value="{!acc.name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

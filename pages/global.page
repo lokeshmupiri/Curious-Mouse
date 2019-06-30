@@ -1,0 +1,17 @@
+<apex:page >
+    <apex:form >
+        <apex:pageblock title="Global variables">
+            <apex:pageblocksection >
+                {!$User.FirstName}
+                <br/>
+                {!$User.LastName}<br/>
+                {!$User.Email}<br/>
+                is it true{!contains('salesforce','force')}
+                <br/>
+                Maximum is:{!max(4,5,4,3,2,4,5,5,4,4,434,4,5,4,4)}
+                <br/>
+                ({! IF($User.isActive, $User.Username, 'inactive') })
+                 </apex:pageblocksection> 
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

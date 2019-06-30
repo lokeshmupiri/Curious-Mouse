@@ -1,0 +1,32 @@
+<apex:page controller="angularJsPractice2Controller" sidebar="false" showheader="false" docType="html-5.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+<script>
+    var angApp = angular.module("myApp",[])
+                    .controller("myController",function($scope){
+                        $scope.contact = {!Contacts};
+                    });
+</script>
+<html>
+<body ng-app="myApp" ng-controller="myController">
+   <table class="table">
+       <thead>
+       <tr>
+       <th>ID</th>
+       <th>FirstName</th>
+       <th>LastName</th>
+       <th>Name</th>
+       <th>Phone</th>
+       </tr>
+       </thead>
+       <tr ng-repeat="con in contact">
+           <td>{{ con.Id }}</td>
+           <td>{{ con.FirstName }}</td>
+           <td>{{ con.LastName}}</td>
+           <td>{{ con.Name }}</td>
+           <td>{{ con.Phone}}</td>
+       </tr>
+   </table>
+</body>
+</html>
+</apex:page>

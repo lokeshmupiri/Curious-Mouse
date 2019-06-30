@@ -1,0 +1,7 @@
+<apex:page controller="objectList">
+    <apex:form >
+        <apex:SelectList value="{!val}" size="1">
+            <apex:SelectOptions value="{!name}"></apex:SelectOptions>
+        </apex:SelectList>
+    </apex:form>
+</apex:page>

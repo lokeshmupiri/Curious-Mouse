@@ -1,0 +1,17 @@
+<apex:page standardController="Account" sidebar="false" title="Displaying Records" recordSetVar="AccRec"> 
+    <apex:form >
+    
+        <apex:pageBlock title="Main Title">
+            <apex:pageBlockTable value="{!AccRec}" var="a">
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.rating}"/>
+                <apex:column value="{!a.accountnumber}"/>
+                <apex:column value="{!a.id}"/>
+                <apex:column value="{!a.description}"/>
+                <apex:column value="{!a.phone}"/>
+                <apex:column value="{!a.fax}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

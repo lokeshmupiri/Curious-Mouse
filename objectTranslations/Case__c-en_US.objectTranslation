@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cases</value>
+    </caseValues>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russia</masterLabel>
+            <translation><!-- Russia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Delivery Time --></label>
+        <name>Delivary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hardware Issue --></label>
+        <name>Hardware_Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Management --></label>
+        <name>Order_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment --></label>
+        <name>Segment__c</name>
+        <picklistValues>
+            <masterLabel>Andhra Pradesh</masterLabel>
+            <translation><!-- Andhra Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arunachal Pradesh</masterLabel>
+            <translation><!-- Arunachal Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baskortostan</masterLabel>
+            <translation><!-- Baskortostan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dagestan</masterLabel>
+            <translation><!-- Dagestan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarath</masterLabel>
+            <translation><!-- Gujarath --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jarkand</masterLabel>
+            <translation><!-- Jarkand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kemerovo</masterLabel>
+            <translation><!-- Kemerovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Krasnodar</masterLabel>
+            <translation><!-- Krasnodar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madhya Pradesh</masterLabel>
+            <translation><!-- Madhya Pradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana Nebraska</masterLabel>
+            <translation><!-- Montana Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moskau</masterLabel>
+            <translation><!-- Moskau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moskovskaja</masterLabel>
+            <translation><!-- Moskovskaja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niznij Novgorod</masterLabel>
+            <translation><!-- Niznij Novgorod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rostov</masterLabel>
+            <translation><!-- Rostov --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samara</masterLabel>
+            <translation><!-- Samara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sankt Petersburg</masterLabel>
+            <translation><!-- Sankt Petersburg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saratov</masterLabel>
+            <translation><!-- Saratov --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stavropol</masterLabel>
+            <translation><!-- Stavropol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sverdlovsk</masterLabel>
+            <translation><!-- Sverdlovsk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamilnadu</masterLabel>
+            <translation><!-- Tamilnadu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tatarstan</masterLabel>
+            <translation><!-- Tatarstan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volgograd</masterLabel>
+            <translation><!-- Volgograd --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Software Issue --></label>
+        <name>Software_Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubSegment --></label>
+        <name>SubSegment__c</name>
+        <picklistValues>
+            <masterLabel>Chittoor</masterLabel>
+            <translation><!-- Chittoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cudappa</masterLabel>
+            <translation><!-- Cudappa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nellore</masterLabel>
+            <translation><!-- Nellore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tirupathi</masterLabel>
+            <translation><!-- Tirupathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warangal</masterLabel>
+            <translation><!-- Warangal --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Case Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Location --></label>
+            <section>Location</section>
+        </sections>
+        <sections>
+            <label><!-- Services --></label>
+            <section>Services</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,66 @@
+<apex:page controller="treenodes" showHeader="true" sidebar="true" tabStyle="Account" >  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    <script >
+        j$ = jQuery.noConflict();
+        j$( document ).ready(function() {
+            createAccountHierarchy();
+        });
+
+        function openChildAccount(id){
+            console.log('Child Account Id: ' + id);
+            alert('Child Account Id: ' + id  + '. You can now do whatever you want with the child account!.')
+        }
+
+        function createAccountHierarchy(){
+         j$("#acctHierarchy").jstree({
+                "plugins": ["themes", "search", "wholerow"],
+                "core" :{
+                     animation : 0,
+                     check_callback : true,
+                     themes : { "stripes" : true },
+                 data : function (node, cb) {
+                     buildTreeNodes(this, node, cb);
+                 }
+              }
+           }).bind('select_node.jstree', function(e, data){
+                openChildAccount(data.node.id);
+           });
+        }
+
+        function buildTreeNodes(tree, node, cb){
+            var parentAcctId = "{!acct.Id}";
+            var nodeId = node.id == "#" ? parentAcctId : node.id;
+            console.log(nodeId);
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.treenodes.getChildAccounts}',
+                nodeId,
+                function(result, event){
+
+                    if (event.status) {
+                        console.log('Yeahhhh : ' + event.status);
+                        var nodes = [];
+                        result.forEach(function(record){
+                            nodes.push({
+                                id: record.acctRecord.Id,
+                                text: record.acctRecord.Name,
+                                children: record.isParent,
+                                icon: record.isParent
+                            });
+                        });
+                        cb.call(tree, nodes);
+                    } else if (event.type === 'exception') {
+                        j$("#responseErrors").html(event.message + " - " + event.where);
+                        console.log(event.message + " - " + event.where);
+                    } else {
+                        j$("#responseErrors").html(event.message);
+                        console.log(event.message);
+                    }
+                },
+                {escape: true}
+            );
+        }
+     </script>
+     <div id="acctHierarchy"></div>
+</apex:page>

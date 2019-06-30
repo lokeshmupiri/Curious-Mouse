@@ -1,0 +1,35 @@
+<apex:page controller="cal" sidebar="false" showHeader="false">
+    <script>
+        window.onload = function(){
+            var workingHours = {
+                                "Mon" : { "from" : '9:00 AM', "to" : '5:00 PM' },
+                                "Tue" : { "from" : '9:00 AM', "to" : '5:00 PM' },
+                                "Wed" : { "from" : '9:00 AM', "to" : '5:00 PM' },
+                                "Thu" : { "from" : '8:00 PM', "to" : '5:00 PM' }  
+                               };
+            var days = { 1 : 'Mon', 2 : 'Tue', 3 : 'Wed', 4 : 'Thu', 5 : 'Fri', 6 : 'Sat', 7 : 'Sun'};                   
+            var today = new Date();
+            var time = workingHours[days[today.getDay()]];
+            var hours = today.getHours();
+            var minutes = today.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+            var cur = Date.parse('22 Mar 2018 '+strTime);
+            var fromTime = Date.parse('22 Mar 2018 '+time["from"]);
+            var toTime = Date.parse('22 Mar 2018 '+time["to"]);
+            
+            if((cur > fromTime) && (cur < toTime)){
+                document.getElementById("d").innerHTML= 'Working Hour';
+            }  else{
+                document.getElementById("d").innerHTML= 'Not Working Hour';            
+            }
+        }
+    </script>
+    <body>
+        <div id="d">gffg</div>
+    </body>
+</apex:page>

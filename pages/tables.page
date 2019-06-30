@@ -1,0 +1,13 @@
+<apex:page standardcontroller="account" sidebar="false">
+   <apex:form >
+    <apex:pageBlock >
+     <apex:pageBlockSection >
+     <apex:pageBlockTable value="{!account}" var="c" border="4">
+      <apex:column value="{!c.name}"/>
+      <apex:column value="{!c.accountnumber}"/>
+      <apex:column value="{!c.id}" />
+     </apex:pageBlockTable>
+     </apex:pageBlockSection>
+    </apex:pageBlock>
+   </apex:form>
+</apex:page>

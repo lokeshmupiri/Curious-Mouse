@@ -1,0 +1,7 @@
+<apex:page controller="Additon">
+    <apex:form >
+        <apex:pageBlock title="Adding Two Numbers" mode="Edit">
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

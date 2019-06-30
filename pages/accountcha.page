@@ -1,0 +1,28 @@
+<apex:page sidebar="false" controller="channel">
+<apex:form >
+    <apex:pageBlock title="Accounts with Direct and Channel">
+        
+            <apex:tabPanel >
+            <apex:tab label="Direct Accounts" labelwidth="400">
+                <apex:pageblockTable value="{!rest}" var="a">
+                    <apex:column value="{!a.name}"/>
+                    <apex:column value="{!a.type}"/>
+                    <apex:column value="{!a.industry}"/>
+                    <apex:column value="{!a.rating}"/>
+                </apex:pageblockTable>
+                </apex:tab>
+                <apex:tab label="channel Accounts" labelwidth="400">
+                <apex:pageblockTable value="{!rest}" var="a">
+                    <apex:column value="{!a.name}"/>
+                    <apex:column value="{!a.type}"/>
+                    <apex:column value="{!a.industry}"/>
+                    <apex:column value="{!a.rating}"/>
+                </apex:pageblockTable>
+            </apex:tab>
+            </apex:tabpanel>
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!section}" value="Click to Section View" />
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

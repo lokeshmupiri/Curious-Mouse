@@ -1,0 +1,8 @@
+<aura:component >
+	<aura:attribute name="greeting" type="String" default="World"/>
+    <aura:attribute name="second" type="String" default="second"/>
+    <lightning:input aura:id="myInput" type="text" value="{!v.greeting}"/>
+    Hello, {!v.greeting}
+    <lightning:input aura:id="myInput2" type="text" value="{!v.second}"/>
+    Hello, {!v.second}
+</aura:component>

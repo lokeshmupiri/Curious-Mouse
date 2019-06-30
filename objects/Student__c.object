@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AutoNumber__c</fullName>
+        <displayFormat>M-{000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>this is auto number</inlineHelpText>
+        <label>AutoNumber</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>FirstHalf__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND( 8 * (X5intoFloorofDateValue__c -  X5infloorOfDatevalmin5andmodofdatevaluec__c ),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FirstHalf</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FloorOfDateValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>FLOOR((DATEVALUE(LastModifiedDate)-DATE(1996,1,1))/7)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FloorOfDateValue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Status_Change__c</fullName>
+        <externalId>false</externalId>
+        <label>Last_Status_Change</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MODDATETIMEVALUE__c</fullName>
+        <externalId>false</externalId>
+        <formula>MOD( datetimevale__c ,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MODDATETIMEVALUE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MODDATEVALUE__c</fullName>
+        <externalId>false</externalId>
+        <formula>MOD(DATEVALUE(LastModifiedDate)-DATE(1996,1,1),7)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MODDATEVALUE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min5andModDateplusmin28by8intoModdatetim__c</fullName>
+        <externalId>false</externalId>
+        <formula>MIN(5, MODDATEVALUE__c + minof28by8intoMODDATETIMEVALUE__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Min5andModDateplusmin28by8intoModdatetim</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Minof28by8intoMODDATETIMEVALUEOfCreatedd__c</fullName>
+        <externalId>false</externalId>
+        <formula>MIN(1, X28by8intoMODDATETIMEVALUEOfCreateddate__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Minof28by8intoMODDATETIMEVALUEOfCreatedd</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Minof5andmodeDateValOfCreatedDateplusMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>MIN(5,MOD(DATEVALUE(CreatedDate)-DATE(1996,1,1),7)+MIN(1,24/8*(MOD(DATETIMEVALUE(CreatedDate)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;),1))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Minof5andmodeDateValOfCreatedDateplusMin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ModOfCreatedDateand1__c</fullName>
+        <externalId>false</externalId>
+        <formula>MOD(DATETIMEVALUE(CreatedDate)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;),1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ModOfCreatedDateand1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_in_current_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>(1/8)* 
+IF(
+	(IF
+		(ISBLANK(Last_Status_Change__c), 
+			8*(
+				(5*FLOOR((TODAY()-DATE(1996,01,01))/7) + 
+					MIN(5,MOD(TODAY()-DATE(1996,01,01), 7) + 
+						MIN(1, 24/8*(MOD(DATETIMEVALUE(NOW())-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1)))
+					)
+				) 
+				- 
+				(5*FLOOR((DATEVALUE(CreatedDate)-DATE(1996,01,01))/7) + 
+					MIN(5,MOD(DATEVALUE(CreatedDate)-DATE(1996,01,01), 7) + 
+						MIN(1, 24/8*(MOD(DATETIMEVALUE(CreatedDate)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1)))
+					)
+				) 
+			), 
+			8*( 
+				(5*FLOOR((TODAY()-DATE(1996,01,01))/7) + 
+					MIN(5,MOD(TODAY()-DATE(1996,01,01), 7) + 
+						MIN(1, 24/8*(MOD(DATETIMEVALUE(NOW())-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1))) 
+					)	
+				) 
+				- 
+				(5*FLOOR((DATEVALUE(Last_Status_Change__c)-DATE(1996,01,01))/7) + 
+					MIN(5, MOD(DATEVALUE(Last_Status_Change__c)-DATE(1996,01,01), 7) +  
+						MIN(1, 24/8*(MOD(DATETIMEVALUE(Last_Status_Change__c)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1))) 
+					)
+				) 
+			) 
+		)
+	) &lt; 0, 0, 
+	(IF
+		(ISBLANK(Last_Status_Change__c), 
+			8*( 
+				(5*FLOOR((TODAY()-DATE(1996,01,01))/7) + 
+				MIN(5,MOD(TODAY()-DATE(1996,01,01), 7) + 
+				MIN(1, 24/8*(MOD(DATETIMEVALUE(NOW())-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1))) 
+				)) 
+				- 
+				(5*FLOOR((DATEVALUE(CreatedDate)-DATE(1996,01,01))/7) + 
+				MIN(5,MOD(DATEVALUE(CreatedDate)-DATE(1996,01,01), 7) + 
+				MIN(1, 24/8*(MOD(DATETIMEVALUE(CreatedDate)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1))) 
+				)) 
+			), 
+			8*( 
+				(5*FLOOR((TODAY()-DATE(1996,01,01))/7) + 
+				MIN(5, MOD(TODAY()-DATE(1996,01,01), 7) + 
+				MIN(1, 24/8*(MOD(DATETIMEVALUE(NOW())-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1))) 
+				)) 
+				- 
+				(5*FLOOR((DATEVALUE(Last_Status_Change__c)-DATE(1996,01,01))/7) + 
+				MIN(5,MOD(DATEVALUE(Last_Status_Change__c)-DATE(1996,01,01), 7) + 
+				MIN(1, 24/8*(MOD(DATETIMEVALUE(Last_Status_Change__c)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;), 1))) 
+				)) 
+			) 
+		)
+	)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time_in_current_Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X28by8intoMODDATETIMEVALUEOfCreateddate__c</fullName>
+        <externalId>false</externalId>
+        <formula>24/8*(MOD(DATETIMEVALUE(CreatedDate)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;),1))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>28by8intoMODDATETIMEVALUEOfCreateddate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X28by8into__c</fullName>
+        <externalId>false</externalId>
+        <formula>24/8* MODDATETIMEVALUE__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>28by8intoMODDATETIMEVALUE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X5floorvalueofLaststatusChange__c</fullName>
+        <externalId>false</externalId>
+        <formula>( 5*FLOOR((DATEVALUE(Last_Status_Change__c)-DATE(1996,1,1))/7)+
+					MIN( 5,MOD(DATEVALUE(Last_Status_Change__c)-DATE(1996,1,1),7)+MIN(1,24/8*(MOD(DATETIMEVALUE(Last_Status_Change__c)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;),1))))
+				)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>5floorvalueofLaststatusChange</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X5infloorOfDatevalmin5andmodofdatevaluec__c</fullName>
+        <externalId>false</externalId>
+        <formula>(5*FLOOR((DATEVALUE(CreatedDate)-DATE(1996,1,1))/7)+ Minof5andmodeDateValOfCreatedDateplusMin__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>5infloorOfDatevalmin5andmodofdatevaluecr</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X5intoFloorofDateValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>5* FloorOfDateValue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>5intoFloorofDateValue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>datetimevale__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE(LastModifiedDate)-DATETIMEVALUE(&apos;1996-01-01 09:00:00&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>datetimevale</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>minof28by8intoMODDATETIMEVALUE__c</fullName>
+        <externalId>false</externalId>
+        <formula>MIN(1, X28by8into__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>minof28by8intoMODDATETIMEVALUE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>modeDateValOfCreatedDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>MOD(DATEVALUE(CreatedDate)-DATE(1996,1,1),7)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>modeDateValOfCreatedDate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>secondHalf__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND( 8 * ( X5intoFloorofDateValue__c -  X5floorvalueofLaststatusChange__c ),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>secondHalf</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>status__c</fullName>
+        <externalId>false</externalId>
+        <label>status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>not submitted</fullName>
+                    <default>true</default>
+                    <label>not submitted</label>
+                </value>
+                <value>
+                    <fullName>pending</fullName>
+                    <default>false</default>
+                    <label>pending</label>
+                </value>
+                <value>
+                    <fullName>approved</fullName>
+                    <default>false</default>
+                    <label>approved</label>
+                </value>
+                <value>
+                    <fullName>rejected</fullName>
+                    <default>false</default>
+                    <label>rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Student</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>S-{0000000000}</displayFormat>
+        <label>Registration num</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Students</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

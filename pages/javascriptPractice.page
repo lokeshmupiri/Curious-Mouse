@@ -1,0 +1,61 @@
+<apex:page controller="javascriptPractice">
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"/>
+    <script>
+        
+        $( document ).ready(function() {
+            console.log('@ draw ');
+            var sfJSON;
+            var finalStr;
+            var jsonURL = "https://iphonenasa-dev-ed--iphonenasa.ap7.visual.force.com/resource/1532359547000/iphonenasa__StringFile";
+            $.getJSON(jsonURL, function(data){
+                sfJSON = JSON.stringify(data);
+                document.getElementById('json').innerHTML = sfJSON;
+            });
+            $('#json').hide();
+            $('#group').on('click', function(){
+                var a=$('#json').text();
+                var k=JSON.parse(a);
+                var res=k.reduce(function(obj, curr){
+                    if(curr['status'] in obj){
+                        obj[curr['status']].push(curr);
+                    } else {
+                        obj[curr['status']]=[];
+                        obj[curr['status']].push(curr);
+                    }                    
+                    return obj;
+                },{});
+                console.log(res);
+                /*var map = {}; 
+                var status2= [];
+                var status5= [];
+                
+                map['2'] = new Array();
+                map['5'] = new Array();
+
+                k.reduce(function(rv,x){
+                    console.log(JSON.stringify(x.status));
+                   var status = JSON.stringify(x.status);
+                   if(status == 2){
+                       status2.push(x);
+                   } else if(status == 5){
+                       status5.push(x);
+                   }    
+                });
+                map['2'].push(status2.toString());
+                map['5'].push(status5.toString());
+                console.log(JSON.stringify(map));*/
+            });
+             //document.getElementById('status').html= JSON.stringify(map);
+             //$('#status').html(JSON.stringify(map));
+        });
+        
+    </script>
+    <div id="group">
+        GroupByStatus
+    </div>
+    <div>
+        <p id="json"></p>
+        <p id="status"></p>
+    </div>
+    
+</apex:page>

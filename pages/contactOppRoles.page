@@ -1,0 +1,49 @@
+<apex:page standardController="Opportunity" extensions="OppContactRolesUtil" action="{!deleteDuplicateOCR}" showHeader="true">
+    <apex:includeScript value="/support/console/32.0/integration.js"/>
+    <apex:includeScript value="/support/api/32.0/interaction.js"/>
+    <apex:includeScript value="/soap/ajax/32.0/connection.js"/>
+    <apex:includeScript value="/jslibrary/1418325280000/sfdc/main.js"/>
+    <apex:form >
+    <head>
+        <base target="_top"/>
+    </head>
+     <support:clickToDial number="973-106-1234"
+        entityId="001XB000000HFUM"
+        params="myparam1,myparam2"
+    />
+    <!--<a href="javascript:void(0);" onclick="parent.disableClicked(this, 'Click to dial disabled'); parent.sendCTIMessage('/CLICK_TO_DIAL?DN='+encodeURIComponent('(93) 106-7970')+'&amp;ID=0031F000004ay7I&amp;ENTITY_NAME=Contact&amp;OBJECT_NAME='+encodeURIComponent('Loeksh Kuamr')+'&amp;DISPLAY_NAME='+encodeURIComponent('Contact'));return false;" title="" style="">(93) 106-7970<img src="/img/btn_dial_inline.gif" alt="Click to dial" width="16" height="10" title="Click to dial" style="display: inline;"/>
+    <img src="/img/btn_nodial_inline.gif" alt="Click to dial disabled" width="16" height="10" style="display: none;" title="Click to dial disabled"/></a>-->
+    <apex:outputPanel id="myRerender">
+        <apex:pageBlock title="" mode="edit">
+            
+            <apex:pageBlockTable value="{!ocrs}" var="ContactRole">
+                <apex:column >
+                    <apex:facet name="header">
+                            Action
+                        </apex:facet>
+                        </apex:column>
+                 <apex:column >
+                      <apex:facet name="header"> Contact Name </apex:facet>
+                      <a href="/{!ContactRole.Contact.Id}" target="_top">{!ContactRole.Contact.Name} </a>
+                 </apex:column>
+                <apex:column value="{!ContactRole.Contact.Account.Name}" headerValue="Account Name"/>
+                <apex:column value="{!ContactRole.Contact.Email}" headerValue="Email"/>
+                <apex:column headerValue="Phone" id="phnId">
+                    <support:clickToDial number="{!ContactRole.Contact.Phone}" 
+                                        entityId="{!ContactRole.Contact.Id}"
+                                        />
+                </apex:column>
+                <!--<apex:column value="{!ContactRole.Contact.Phone}" headerValue="Phone"/>-->
+                <apex:column value="{!ContactRole.Role}" headerValue="Role"/>
+                <apex:column value="{!ContactRole.IsPrimary}" headerValue="Primary"/>
+             </apex:pageBlockTable>    
+              <apex:pageBlockButtons location="top">
+                    <input type="button" class="btn" value="Manage Contact Roles" onclick="window.top.location.href='/apex/SelectOCRs?oid={!Opportunity.Id}'"/>
+              </apex:pageBlockButtons>
+          </apex:pageBlock>  
+    </apex:outputPanel>
+    
+   
+    </apex:form>
+    <form action="/{!Opportunity.Id}" target="_parent" name="rform"></form>
+</apex:page>

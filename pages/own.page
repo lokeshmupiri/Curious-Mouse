@@ -1,0 +1,12 @@
+<apex:page controller="c2">
+ <apex:form >
+     <apex:pageBlock >
+         <apex:pageBlockTable value="{!acts}" var="v">
+             <apex:column value="{!v.id}"/>
+             <apex:column value="{!v.name}"/>
+             <apex:column value="{!v.AccountNumber}"/>
+             <apex:column value="{!v.industry}"/>
+         </apex:pageBlockTable>
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

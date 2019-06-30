@@ -1,0 +1,69 @@
+<apex:page controller="AccountHierarchyLoaderController">
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Shield UI Demos</title>
+    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+</head>
+<body class="theme-light">
+<div class="container">
+    <ul id="treeview">
+    <apex:repeat value="{!ObjectStructure}" var="pos">   
+               
+        <li data-icon-cls="treeview-icon icon-folder" id="{!pos.nodeId}" data-expanded="true">{!pos.account.name}
+            <div class="{!pos.nodeId}"></div>
+        </li>
+        </apex:repeat>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#treeview").shieldTreeView();
+        $("li").each(function(){
+        
+        });
+    });
+</script>
+<style>
+    .container
+    {
+        max-width: 400px;
+        margin: auto;
+    }
+    .treeview-icon
+    {
+        width: 16px;
+        height: 16px;
+        background-image: url("/Content/img/file/file-icons-sprite.png");
+    }
+    .icon-folder
+    {
+        background-position: 0px 0px;
+    }
+    .icon-png
+    {
+        background-position: -16px 0px;
+    }
+    .icon-txt
+    {
+        background-position: -32px 0px;
+    }
+    .icon-pdf
+    {
+        background-position: -48px 0px;
+    }
+    .icon-doc
+    {
+        background-position: -64px 0px;
+    }
+    .icon-xls
+    {
+        background-position: -80px 0px;
+    }
+</style>
+</body>
+</html>
+</apex:page>

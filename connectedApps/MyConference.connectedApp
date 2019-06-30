@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>mlokesh.lm@gmail.com</contactEmail>
+    <label>MyConference</label>
+    <oauthConfig>
+        <callbackUrl>https://awesome-conference.herokuapp.com/oauthcallback.html</callbackUrl>
+        <consumerKey>3MVG9ZL0ppGP5UrCwTzaUFztNKvlT5Vz.cmgZVIMDysjqHN0dq9C_P9tOsuFlOXkmcFMMm8EB5f6Ace0bxbcx</consumerKey>
+        <scopes>Full</scopes>
+    </oauthConfig>
+</ConnectedApp>

@@ -1,0 +1,7 @@
+<apex:page standardController="account" showHeader="false" standardStylesheets="false" extensions="RequiredCheckController" docType="html-5.0"> 
+<apex:pageMessages id="message"></apex:pageMessages> 
+<apex:form > 
+<apex:inputField value="{!account.name}" required="true"/> 
+<apex:commandButton value="check2" action="{!doAction}" immediate="true"/> 
+</apex:form> 
+</apex:page>

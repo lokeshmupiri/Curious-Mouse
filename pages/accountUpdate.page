@@ -1,0 +1,15 @@
+<apex:page standardController="contact" sidebar="false" extensions="accUpdate">
+<apex:pageMessages ></apex:pageMessages>
+<apex:sectionHeader title="Contact Edit" subtitle="Select Account to Edit"/>
+
+    <apex:form >
+        <apex:pageblock title="Contact Page">
+            <apex:pageblockSection title="Account Update" showheader="true">
+                <apex:inputfield value="{!contact.accountid}"/>
+            </apex:pageblockSection>
+            <apex:pageblockButtons >
+                <apex:commandButton value="EDIT" action="{!geteditAccount}" />
+            </apex:pageblockButtons>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

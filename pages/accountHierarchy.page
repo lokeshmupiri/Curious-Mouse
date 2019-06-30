@@ -1,0 +1,37 @@
+<apex:page contentType="application/json" controller="AccountHierarchyController" readOnly="true" action="{!retrieveNodes}">
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    <link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" 
+         rel = "stylesheet" />
+      <script type = "text/javascript" 
+         src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+      
+      <script type = "text/javascript">
+         Ext.onReady(function() {
+            Ext.define('AccountHierarchy', {  
+                  extend: 'Ext.data.Model',  
+                  fields: [  
+                       {name: 'name', type: 'string'},  
+                       {name: 'industry', type: 'string'},  
+                       {name: 'owner', type: 'string'},  
+                       {name: 'rating', type: 'string'},  
+                       {name: 'revenue', type: 'string'},  
+                       {name: 'acctType', type: 'string'},  
+                       {name: 'numberOfEmployees', type: 'string'},  
+                       {name: 'recordId', type: 'string'}  
+                  ],  
+                   proxy: {  
+                       type: 'ajax',  
+                       url: '/apex/AccountHierarchyLoader',  
+                       actionMethods : {  
+                            read: 'POST'  
+                       }  
+                  }  
+             });  
+         });
+      </script>
+    </head>
+    <div id="accountHeirarchy"></div> 
+</apex:page>

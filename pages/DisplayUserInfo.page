@@ -1,0 +1,13 @@
+<apex:page sidebar="false">
+    
+        <apex:pageBlock title="user info">
+        	<apex:pageBlockSection columns="1">                
+            user first name:	{!$User.FirstName}
+            user mail id: 	    {!$User.Email}
+            user login id: 		{!$User.Username}
+            user company name:	{!$User.CompanyName}
+               
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    
+</apex:page>

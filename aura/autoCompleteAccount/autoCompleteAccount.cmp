@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="autoCompleteLightning">
+    
+    <aura:attribute type="Account[]" name="Accounts"/>
+    <form class="slds-form--stacked">
+        <div class="slds-form-element">
+    	 	<label class="slds-form-element__label">Name</label>
+            <div class="slds-form-element__control">
+            	<ui:inputText class="slds-input"/>
+			</div>	
+        </div>
+    </form>
+    <dataList id="acctList">
+    	<aura:iteration items="{!v.accounts}" var="account">
+            <option value="{!account.name}"/>
+        </aura:iteration>
+    </dataList>
+</aura:component>

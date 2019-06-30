@@ -1,0 +1,46 @@
+<apex:page controller="CAGESearchClass2_Tia">
+<apex:form >
+  <apex:inputText value="{!searchstring}" id="SearchTextId" styleClass="searchtext" html-placeholder="What are you looking for?" onkeypress="if (event.keyCode == 13) {MainSearchFunction(); refreshSearchResult(); return false;} ">
+   <c:AutoComplete1 autocomplete_textbox="{!$Component.SearchTextId}" productfamily="selectedDataCategory1" />  
+   </apex:inputText>
+</apex:form>
+<script>
+function MainSearchFunction() {        
+        var inputcheck = $("input[id$='SearchTextId']").val();
+        if(inputcheck != '') { 
+            if((inputcheck.length <= 2 && inputcheck.indexOf("*") != -1) || inputcheck.length < 2) {                                       
+            }
+            else {   
+                caseSearch();
+                $('#Headerpanel').hide();
+                $("input[id$='SearchTextId']").show();
+                $('#u11_img').show();      
+                $('#u21_img').show();                       
+                $('#Searchpaneltxt').removeClass('hidden');
+                $('#Searchpanelbtn').removeClass('hidden'); 
+                SearchClicked = true; 
+                $('#CaseKnowledgedivmain').removeClass('hidden');               
+                $('#CaseListdiv').hide();
+                $('#landpage').hide();
+                $('#most').hide();                        
+            }
+        }
+        else {
+            $('#ValidationMessage').modal({
+                show:true,
+                closeOnEscape: true
+            });
+        }
+    }   
+    // Declaring variables for caseSearch
+    var CasesIndex = 0;
+    var SolutionsIndex = 0;
+    var size;
+    var SolutionsArray = [];
+    var CasesArray = [];
+    var SOSLResult;  
+    function caseSearch() {
+                                      
+    }    
+</script>
+</apex:page>

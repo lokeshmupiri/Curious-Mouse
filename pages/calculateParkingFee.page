@@ -1,0 +1,31 @@
+<apex:page sidebar="false" showHeader="false">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  
+        <div ng-app="AddNumbersApp">
+            <div ng-controller="AddNumbersController">
+                startTime<input ng-model="a" type="text"  ng-keyup="AddNumbers()"/>
+                endTime:<input ng-model="b" type="text" ng-keyup="AddNumbers()"/><br/>
+                <h1>Total Amount : Rs.{{ Amount }} </h1>
+            </div>
+        </div>
+
+    <script>
+        angular.module('AddNumbersApp', [])
+            .controller('AddNumbersController', function($scope) {
+                $scope.AddNumbers = function() {
+                    var a = Number($scope.a || 0);
+                    var b = Number($scope.b || 0);
+                    var Total = b-a;
+                    if(Total>0){
+                        var i = 5;
+                        if(Total>1){
+                            Total = (Total - 1)*4 + i;
+                        } else{
+                            Total = i;
+                        }
+                    }
+                    $scope.Amount = Total;
+                }
+        });
+      </script>
+</apex:page>

@@ -1,0 +1,46 @@
+<apex:page controller="angularjsPractice3">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js" />
+	<script>
+		var myApp = angular.module('myModule',[]);	
+		myApp.controller("myController",function($scope){
+			$scope.message = 'Testing';
+			$scope.contacts = {!Contact};
+			$scope.rowLimit = 15;
+			$scope.sortColumn = function(sortCol){
+				console.log(sortCol);
+			}
+			//console.log('<<<>>>'+Object.keys(contacts).length);
+		});
+	</script>
+	<style>
+		table {
+			border : 1px solid black;
+		}
+	</style>
+	<body ng-app="myModule">
+		<div  ng-controller="myController">
+			Search for a contact here : <input type="text"/>
+			<br/><br/>
+			Row Limit : <input type="number" step="1" min="1" max="60" ng-model="rowLimit"/>
+			<br/><br/>
+			<table border="1">
+				<thead>
+					<tr>
+						<th ng-click="sortColumn('Name')" >Name</th>
+						<th ng-click="sortColumn('Phone')">Phone</th>
+						<th ng-click="sortColumn(this)">Account Name </th>
+						<th ng-click="sortColumn(this)">Created Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="contact in contacts | limitTo : rowLimit | orderBy : sortColumn">
+						<td>{{ contact.Name }}</td>
+						<td> {{ contact.Phone }} </td>
+						<td> {{ contact.Account.Name }} </td>
+						<td> {{ contact.CreatedDate | date}} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</apex:page>

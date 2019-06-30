@@ -1,0 +1,24 @@
+<apex:page controller="CtrDependantPicklist" >
+ <apex:form >
+     <apex:pageBlock Title="New Case" mode="edit" id="Block">
+        <apex:pageBlockSection title="Case Information" id="Block1" columns="2" collapsible="true">
+
+            <apex:pageblockSectionItem >
+                <apex:outputLabel value="State"/>
+                <apex:selectList size="1" value="{!selectedState}">
+                    <apex:selectOptions value="{!states}"/>
+                    <apex:actionSupport event="onchange" action="{!getCities}" reRender="a"/>
+                </apex:selectList>               
+            </apex:pageblockSectionItem>
+            <apex:outputPanel id="a">
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel value="City"/>
+                    <apex:selectList size="1" value="{!selectedCity}" id="a1">
+                        <apex:selectOptions value="{!cities}"/>
+                    </apex:selectList>
+                </apex:pageblockSectionItem>
+          </apex:outputPanel> 
+       </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

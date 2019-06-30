@@ -1,0 +1,16 @@
+<apex:page controller="apexParam">
+  <apex:form >
+      <apex:outputPanel id="main">
+      <apex:pageBlock >
+          <apex:pageblockTable value="{!AllLeads}" var="a">
+              <apex:Column value="{!a.Name}"/>
+              <apex:column >
+              <apex:commandLink value="Delete" action="{!deleteAcc}" rerender="main">
+                  <apex:param assignTo="{!curId}" value="{!a.Id}" name="param"/>
+              </apex:commandLink>
+             </apex:column>
+          </apex:pageblockTable>
+      </apex:pageBlock>
+      </apex:outputPanel>
+  </apex:form>
+</apex:page>

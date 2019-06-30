@@ -1,0 +1,24 @@
+<apex:page controller="AccountRemoter">
+    <script type="text/javascript">
+     function getRemoteAccount() {
+     alert('call');
+    Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.AccountRemoter.getAccount}', function(result, event){
+                    var MyTask ='';
+                    var TaskCount=0;
+                    var RecordCount='';
+                    $.each(result,function(index,value) {
+                        MyTask += '<tr><td width="10%" style="text-align:center;" class="hidden-sm hidden-xs">'+value.Status+ '</td></tr>';
+                                        TaskCount++;
+                                    
+                    }
+        $("#DisplayReportId0").html(MyTask); 
+        RecordCount='<DIV style="font-size: 12px;border: 1px solid #FFFFFF;color: #666;font-family: Arial, sans-serif;"><P><SPAN>Total Records Count :'+TaskCount+'</SPAN></P></DIV>';
+
+            });
+            }
+    </script>
+    <input id="acctSearch" type="text"/>
+    <button onclick="getRemoteAccount()">Get Account</button>
+    <table id="DisplayReportId0"></table>
+</apex:page>

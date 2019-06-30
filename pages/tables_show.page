@@ -1,0 +1,17 @@
+<apex:page standardController="account" recordsetVar="account">
+   <apex:form >
+    <apex:pageBlock >
+    Filter:
+    <apex:selectlist size="1" value="{!filterid}">
+        <apex:selectoptions value="{!listviewoptions}"/>
+        <apex:actionsupport event="onChange" rerender="contact_List"/>
+    </apex:selectlist>
+        <apex:pageblocktable value="{!account}" var="cr">
+            <apex:column value="{!cr.name}"/>
+            <apex:column value="{!cr.type}"/>
+            <apex:column value="{!cr.rating}" />
+        </apex:pageblocktable>
+        <apex:commandLink action="{! Previous }" value="« Previous" rendered="{! HasPrevious }"/>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

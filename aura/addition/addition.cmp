@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="number1" type="integer"/>
+    <aura:attribute name="number2" type="integer"/>
+    <aura:attribute name="result" type="integer"/>
+    <div  class="slds-grid slds-wrap slds-color__background_gray-1 slds-box" >
+        <lightning:input label="Number 1" type="Integer" value="{!v.number1}" required="true"/>
+        <lightning:input label="Number 2" required="true" value="{!v.number2}" type="Integer"/>
+        <ui:outputText value="{!v.result}"/>
+        <lightning:button label="Add" onclick="{!c.add}" />
+    </div>
+</aura:component>

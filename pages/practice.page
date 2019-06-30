@@ -1,0 +1,30 @@
+<apex:page controller="practiceController" sidebar="false">
+    <apex:form >
+        <table>
+            <tr>
+                <td class="selectCell">
+                    <apex:outputPanel >
+                    <apex:outputLabel value="Available Users" for="multiselectPanel:leftList" />
+                    </apex:outputPanel>
+                    <br/>
+                    <apex:selectList value="{!selectedUserId}" size="15" style="width: 200px;" multiselect="true">
+                        <apex:selectOptions value="{!availableUsers}"/>
+                    </apex:selectList>
+                </td>
+                <td>
+                    <apex:outputpanel >Add</apex:outputpanel>
+                    <apex:commandLink action="{!}" />
+                    <apex:image value="/s.gif"  styleClass="rightArrowIcon"/><br/>
+                    <apex:outputpanel >Remove</apex:outputpanel>
+                    <apex:commandLink action="{!}" />
+                    <apex:image value="/s.gif"  styleClass="leftArrowIcon"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+            </tr>
+        </table>
+    </apex:form>
+</apex:page>

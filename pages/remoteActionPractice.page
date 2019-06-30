@@ -1,0 +1,34 @@
+<apex:page controller="AccountRemoteActionController">
+    <script>
+        function getAccount(){
+            //var searchName = document.getElementById('name').value;
+            Visualforce.remoting.Manager.invokeAction(
+                "{!$RemoteAction.AccountRemoteActionController.getAccount}",function(result,event){
+                //"{!$RemoteAction.AccountRemoteActionController.getAccount}",searchName,function(result,event){
+                    if(event.status){
+                        if(result.length >0){
+                            var htmlTable = '<table><tr><th>Name</th><th>AccountId</th></tr>';
+                            for(var i=0; i < result.length; i++){
+                                htmlTable += '<tr>';
+                                htmlTable += '<td>'+result[i].Name+'</td>';
+                                htmlTable += '<td>'+result[i].Id+'</td>';
+                                htmlTable += '</tr>';
+                                
+                            }
+                            htmlTable += '</table>';
+                            document.getElementById('result').innerHTML  = htmlTable;
+                        } else {
+                            document.getElementById("errors").innerHTML = "No Records found.." 
+                        }
+                    } else if(event.status == 'exception'){
+                        document.getElementById('errors').innerHTML = event.message;
+                    }
+                },{escape:true}
+            );
+        }
+    </script>
+    <input type = 'text' id='name'/>
+    <button onClick = 'getAccount();'>getAccount</button>
+    <div id = "errors"></div>
+    <div id = "result"></div>
+</apex:page>

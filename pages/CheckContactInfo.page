@@ -1,0 +1,10 @@
+<apex:page standardController="Contact" sidebar="false" showHeader="false">
+
+<script type="text/javascript">
+    var status = '{!Contact.Inactive__c}';
+    if(status!=="") {
+        alert ('WARNING!  THIS CONTACT IS NO LONGER ACTIVE!!!!') ;
+    }
+    </script>
+  
+</apex:page>

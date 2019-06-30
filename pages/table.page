@@ -1,0 +1,12 @@
+<apex:page sidebar="false" standardController="account">
+    <apex:pageBlock title="Account Information">
+         <apex:pageBlockTable value="{!account.contacts}" var="contact">
+             <apex:column >
+             <apex:outputLink value="{! URLFOR($Action.Contact.Edit, contact.Id) }">
+             Edit
+                </apex:outputLink>
+             </apex:column>
+             <apex:column value="{!contact.Name}}"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+</apex:page>

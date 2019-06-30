@@ -1,0 +1,13 @@
+<apex:page controller="picklist_values_based_on_recordtype">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:selectList value="{!selectedRT}" size="1" multiselect="false" label="Record Type" title="Record Type" id="recordTypes"> 
+                    <apex:actionSupport event="onchange" action="{!getPickListValues}" reRender="categoryPicList" />
+                    <apex:selectOptions value="{!RecordTypeList}" /> 
+                </apex:selectList>
+                <apex:inputField id="categoryPicList" value="{!customer.Type}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

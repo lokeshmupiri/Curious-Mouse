@@ -1,0 +1,23 @@
+<apex:page standardController="contact" extensions="relatedContacts">
+<apex:form >
+<apex:pageBlock title="Account Update">
+    <apex:pageblocksection >
+        <apex:inputField value="{!contact.accountid}"/>
+    </apex:pageblocksection>
+<apex:commandButton action="{!relCon}" value="Related Contacts" rerender="load"/>
+
+<apex:outputPanel id="load">
+
+    <apex:pageBlockTable value="{!relCon}" var="c" rendered="{!and(relcon!=null,relcon.size>0)}">
+        
+        <apex:column headerValue="Id" value="{!c.id}"/>
+        <apex:column headerValue="FirstName" value="{!c.FirstName}"/>
+        <apex:column headerValue="LastName" value="{!c.LastName}"/>
+        
+    </apex:pageBlockTable>
+   <apex:outputLink value="{!URLFOR('apex/accountDetails')}">goto accountDetail page</apex:outputLink>
+    </apex:outputPanel>
+    
+    </apex:pageblock>
+</apex:form>
+</apex:page>

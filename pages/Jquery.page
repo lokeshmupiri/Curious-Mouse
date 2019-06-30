@@ -1,0 +1,111 @@
+<apex:page showHeader="false">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <script type='text/javascript' src='/resource/xioami'></script>
+    <script src="jquery.min.js"></script>
+    <apex:includeScript value="{!$Resource.xioami}"/>
+    <script src="jssor.slider.min.js"></script>
+      <script type="text/javascript" language="javascript">
+      $(document).ready(function(){
+          $("#home-div").hide();  
+          $("#home").hover(function(){
+              $("#home-div").toggle(200);
+          });
+          $("#nav").hover(function(){
+              $('#nav').css({'cursor': 'pointer'});
+          });
+          $("#home").hover(function(){
+              $('#home').animate({left: '100px'}, "slow");
+          });
+        var options = { $AutoPlay: 1 };
+        var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+      });
+    </script>
+    <style>
+        
+        #nav{
+            font-size: 12px;
+            font-family: ProximaNova,Arial,Sans-serif;
+            text-transform: uppercase;
+        }
+        #left{
+            border: 1px solid;
+            padding-right: 30px;
+            padding-left: 160px;
+        }
+        .w3-bar-item:hover,.w3-bar-item:active{
+           color: red;
+        }
+        #right{
+            border: 1px solid black;
+            padding-right: 180px;
+            padding-left: 30px;
+            float:right;
+        }
+        #mainBar{
+            position: absolute;
+            width: 100%;
+            height: 88px;
+            overflow: hidden;
+            transition: all .4s ease;
+            padding-top: 20px;
+        }
+        .curtain.index {
+            background-color: transparent;
+        }
+        #centre{
+            border: 1px;
+            padding-right: 100px;
+            padding-left: 250px;
+            font-family: ProximaNova;
+            font-weight: 600;
+            background-color: transparent;
+            margin: 0 25px;
+            cursor: default;
+        }
+        #home{
+           border: 1px;
+           padding-right: 100px;
+           padding-left: 50px; 
+           position: absolute;
+          -webkit-clip-path: inset(30px 10px 30px 10px);
+          clip-path: inset(0 10px 10px 100px);
+        }
+        
+    </style>
+    <div class="w3-bar w3-black" id="navigationMenu">
+        <div id="nav">
+          <div id="left">
+              <div class="w3-bar-item">mi INDIA</div>
+              <div class="w3-bar-item" >MI COMMUNITY</div>
+              <div class="w3-bar-item" >DOWNLOAD MI STORE APP</div>
+          </div>
+          <div id="right">
+              <div class="w3-bar-item">SIGN IN</div>
+              <div class="w3-bar-item">SIGN UP</div>             
+              <div class="w3-bar-item" id="cart"><span class="glyphicon glyphicon-shopping-cart"></span>cart (0)</div>
+          </div>
+      </div>
+    </div>
+    
+    <div id="mainBar" class="curtain index">
+        
+            
+        <div class="w3-bar">
+            <div id="home" class="w3-bar-item"><img src="{!URLFOR($Resource.xioami, 'xioami/mihome.png')}"/></div>
+            <div id="centre">
+            <div class="w3-bar-item">Mi Phones</div>
+            <div class="w3-bar-item">Redmi Phones</div>
+            <div class="w3-bar-item">Audio</div>
+            <div class="w3-bar-item">Smart Devices</div>
+            <div class="w3-bar-item">Mi Power Bank</div>
+            <div class="w3-bar-item">Accessories</div>
+            <div class="w3-bar-item">Retail Stores</div>
+            <div class="w3-bar-item">Support</div>
+            </div>
+        </div>
+    </div>
+</apex:page>

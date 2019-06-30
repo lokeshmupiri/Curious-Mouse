@@ -1,0 +1,11 @@
+<apex:page controller="c2">
+
+    <apex:pageBlock title="List of Account with Direct And Channel">
+        <apex:pageBlockSection >
+            <apex:pageBlock Title="Direct Accounts">
+                            
+             </apex:pageBlock>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

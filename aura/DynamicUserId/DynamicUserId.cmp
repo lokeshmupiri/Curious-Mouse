@@ -1,0 +1,10 @@
+<aura:component controller="HelloWorld" implements="flexipage:availableForAllPageTypes"  access="PUBLIC">
+    <aura:attribute name="user" type="User"/>
+    <li>
+        <ui:outputText value="{!v.user}"/> 
+        <lightning:buttonMenu iconName="utility:down" name="Menu" iconSize="small" onselect="{!c.handleMenuSelect }">
+            <lightning:menuItem label="My Profile" value="Profile"/>
+            <lightning:menuItem label="Logout" value="Logout"/>
+        </lightning:buttonMenu>
+    </li>
+</aura:component>

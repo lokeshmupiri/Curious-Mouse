@@ -1,0 +1,17 @@
+<apex:page controller="table" action="{!disp}">
+    <apex:messages />
+    <apex:form >
+        Number of Records : {!count}
+        <apex:pageBlock >
+            Enter a Name    :    <apex:inputText value="{!sname}"/>
+            <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Display" action="{!disp}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock >        
+            <apex:pageBlockTable value="{!li}" var="a" >
+                <apex:column value="{!a.name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

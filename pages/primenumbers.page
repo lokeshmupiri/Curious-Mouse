@@ -1,0 +1,9 @@
+<apex:page sidebar="false" showHeader="false" controller="myown">
+    <apex:form >
+        <apex:pageblock title="Naresh technologies">
+        <apex:pageBlockSection title="course contents">
+          
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

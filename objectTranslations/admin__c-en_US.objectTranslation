@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>admin</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>admins</value>
+    </caseValues>
+    <fields>
+        <label><!-- CO --></label>
+        <name>CO__c</name>
+    </fields>
+    <fields>
+        <label><!-- DMS --></label>
+        <name>DMS__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP --></label>
+        <name>IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- LABS --></label>
+        <name>LABS__c</name>
+    </fields>
+    <fields>
+        <label><!-- OM --></label>
+        <name>OM__c</name>
+    </fields>
+    <fields>
+        <label><!-- PS --></label>
+        <name>PS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reg num --></label>
+        <name>Reg_num__c</name>
+        <relationshipLabel><!-- admins --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Student name --></label>
+        <name>Student_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- WORK --></label>
+        <name>WORK__c</name>
+    </fields>
+    <layouts>
+        <layout>admin Layout</layout>
+        <sections>
+            <label><!-- Attendence Details Section --></label>
+            <section>Attendence Details Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information Section --></label>
+            <section>Information Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Enter value b/n0 to 18 --></errorMessage>
+        <name>co_rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter the days between 0 to 18 --></errorMessage>
+        <name>dms_rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter value b/n0 to 18 --></errorMessage>
+        <name>ip_rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter value b/n0 to 18 --></errorMessage>
+        <name>lab_rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter value b/n0 to 18 --></errorMessage>
+        <name>om_rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter value b/n0 to 18 --></errorMessage>
+        <name>ps_rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- total must be lessthan working days --></errorMessage>
+        <name>work_rule</name>
+    </validationRules>
+</CustomObjectTranslation>
